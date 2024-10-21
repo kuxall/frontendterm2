@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>FizzBuzz</title>
+		<style>
+			body {
+				font-family: 'Arial', sans-serif;
+				background-color: #f4f4f9;
+				color: #333;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
+			}
+
+			h1 {
+				color: #3498db;
+				font-size: 2.5rem;
+				margin-bottom: 10px;
+			}
+
+			p {
+				font-size: 1.2rem;
+				color: #555;
+			}
+
+			button {
+				padding: 10px 20px;
+				font-size: 1.2rem;
+				background-color: #3498db;
+				color: white;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+				transition: background-color 0.3s ease, transform 0.3s ease;
+				margin-top: 20px;
+			}
+
+			button:hover {
+				background-color: #2980b9;
+				transform: scale(1.05);
+			}
+
+			#result {
+				margin-top: 20px;
+				font-size: 1.1rem;
+				max-height: 400px;
+				overflow-y: auto;
+				padding: 20px;
+				width: 300px;
+				background-color: #ecf0f1;
+				border-radius: 10px;
+				box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+			}
+
+			/* Fizz and Buzz colors */
+			.fizz {
+				color: #e74c3c;
+				font-weight: bold;
+			}
+
+			.buzz {
+				color: #f39c12;
+				font-weight: bold;
+			}
+
+			.fizzbuzz {
+				color: #2ecc71;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>FizzBuzz</h1>
+		<p>This is a simple FizzBuzz game.</p>
+		<button onclick="fizzBuzz()">Start Game</button>
+		<div id="result"></div>
+
+		<script>
+			function fizzBuzz() {
+				let resultElement = document.getElementById("result");
+				resultElement.innerHTML = "";
+
+				for (let i = 1; i <= 100; i++) {
+					if (i % 3 == 0 && i % 5 == 0) {
+						resultElement.innerHTML += `<span class="fizzbuzz">FizzBuzz</span><br>`;
+					} else if (i % 3 == 0) {
+						resultElement.innerHTML += `<span class="fizz">Fizz</span><br>`;
+					} else if (i % 5 == 0) {
+						resultElement.innerHTML += `<span class="buzz">Buzz</span><br>`;
+					} else {
+						resultElement.innerHTML += `${i}<br>`;
+					}
+				}
+			}
+		</script>
+	</body>
+
+</html>

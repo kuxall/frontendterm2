@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Prime Checker</title>
+		<style>
+			body {
+				font-family: 'Arial', sans-serif;
+				background-color: #f4f4f9;
+				color: #333;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
+			}
+
+			h1 {
+				color: #4caf50;
+				font-size: 2.5rem;
+			}
+
+			p {
+				font-size: 1.2rem;
+				color: #555;
+			}
+
+			input[type="number"] {
+				padding: 10px;
+				font-size: 1.2rem;
+				margin: 10px;
+				border: 2px solid #ccc;
+				border-radius: 5px;
+				width: 200px;
+				outline: none;
+				transition: border 0.3s ease;
+			}
+
+			input[type="number"]:focus {
+				border-color: #4caf50;
+			}
+
+			button {
+				padding: 10px 20px;
+				font-size: 1.2rem;
+				background-color: #4caf50;
+				color: white;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+				transition: background-color 0.3s ease;
+			}
+
+			button:hover {
+				background-color: #45a049;
+			}
+
+			#result {
+				margin-top: 20px;
+				font-size: 1.5rem;
+				color: #333;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>Prime Number Checker</h1>
+		<p>This is a simple Prime Number Checking Game</p>
+		<input type="number" id="number" placeholder="Enter a number">
+		<button onclick="check_prime()">Check Prime</button>
+		<p id="result"></p>
+
+		<script>
+			function check_prime() {
+				let num = parseInt(document.getElementById("number").value);
+				let isPrime = true;
+				if (isNaN(num)) {
+					document.getElementById("result").innerHTML = "Please enter a valid number";
+					return;
+				}
+				if (num === 1) {
+					document.getElementById("result").innerHTML = "1 is neither prime nor composite";
+					return;
+				}
+
+				if (num <= 1) {
+					isPrime = false;
+					document.getElementById("result").innerHTML = num + " is not a prime number";
+				}
+				for (let i = 2; i <= Math.sqrt(num); i++) {
+					if (num % i == 0) {
+						isPrime = false;
+						break;
+					}
+				}
+				if (isPrime) {
+					document.getElementById("result").innerHTML = num + " is a prime number";
+				} else {
+					document.getElementById("result").innerHTML = num + " is not a prime number";
+				}
+			}
+		</script>
+	</body>
+
+</html>

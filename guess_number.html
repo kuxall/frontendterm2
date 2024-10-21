@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Number Guessing Game</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				background-color: #f4f4f9;
+				color: #333;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
+				margin: 0;
+			}
+
+			h1 {
+				color: #3498db;
+			}
+
+			input[type="number"] {
+				padding: 10px;
+				font-size: 1.2rem;
+				margin: 10px;
+				border: 2px solid #ccc;
+				border-radius: 5px;
+				width: 200px;
+			}
+
+			button {
+				padding: 10px 20px;
+				font-size: 1.2rem;
+				background-color: #3498db;
+				color: white;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+				margin-top: 10px;
+			}
+
+			button:hover {
+				background-color: #2980b9;
+			}
+
+			#result {
+				margin-top: 20px;
+				font-size: 1.5rem;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<h1>Number Guessing Game</h1>
+		<p>Guess the number between 1 and 50!</p>
+		<input type="number" id="guess" placeholder="Enter your guess" min="1" max="50">
+		<button onclick="guessNumber()">Guess</button>
+		<div id="result"></div>
+
+		<script>
+			// Generate a random number between 1 and 50
+			const randomNumber = Math.floor(Math.random() * 50) + 1;
+			let attempts = 5;
+
+			function guessNumber() {
+				const guess = parseInt(document.getElementById("guess").value);
+				const resultElement = document.getElementById("result");
+
+				if (guess < 1 || guess > 50) {
+					resultElement.innerHTML = `Please enter a number between 1 and 50.`;
+					return;
+				}
+
+				if (guess === randomNumber) {
+					resultElement.innerHTML = `Congratulations! You guessed the number ${randomNumber}!`;
+					return;
+				}
+
+				attempts--;
+
+				if (attempts > 0) {
+					resultElement.innerHTML = `Too ${guess < randomNumber ? 'low' : 'high'}! Attempts left: ${attempts}`;
+				} else {
+					resultElement.innerHTML = `Sorry! You ran out of attempts. The number was ${randomNumber}. Game Over!`;
+				}
+			}
+		</script>
+
+	</body>
+
+</html>

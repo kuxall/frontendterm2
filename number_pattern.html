@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Number Pattern</title>
+		<style>
+			body {
+				font-family: 'Arial', sans-serif;
+				background-color: #f4f4f9;
+				color: #333;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
+			}
+
+			h1 {
+				color: #3498db;
+				font-size: 2.5rem;
+				margin-bottom: 10px;
+			}
+
+			p {
+				font-size: 1.2rem;
+				color: #555;
+			}
+
+			button {
+				padding: 10px 20px;
+				font-size: 1.2rem;
+				background-color: #3498db;
+				color: white;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+				transition: background-color 0.3s ease, transform 0.3s ease;
+				margin-top: 20px;
+			}
+
+			button:hover {
+				background-color: #2980b9;
+				transform: scale(1.05);
+			}
+
+			#result {
+				margin-top: 20px;
+				font-size: 1.1rem;
+				max-height: 400px;
+				overflow-y: auto;
+				padding: 20px;
+				width: 300px;
+				background-color: #ecf0f1;
+				border-radius: 10px;
+				box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+			}
+
+			.number {
+				font-weight: bold;
+				margin-right: 5px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>Number Pattern</h1>
+		<p></p>
+		<!-- <button onclick="generatePattern()">Generate Pattern</button> -->
+		<div id="result"></div>
+
+		<script>
+			let resultElement = document.getElementById("result");
+			resultElement.innerHTML = "";
+			let rows = 5;
+			for (let i = 1; i <= rows; i++) {
+				let row = "";
+				for (let j = 1; j <= i; j++) {
+					row += `<span class="number">${j}</span>`;
+				}
+				resultElement.innerHTML += row + "<br>";
+			}
+
+		</script>
+	</body>
+
+</html>
