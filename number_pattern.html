@@ -4,30 +4,32 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Number Pattern</title>
+		<title>Number Pattern Game </title>
 		<style>
+			/* Basic styling for the page */
 			body {
-				font-family: 'Arial', sans-serif;
+				font-family: Arial, sans-serif;
 				background-color: #f4f4f9;
 				color: #333;
-				margin: 0;
-				padding: 0;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
 				height: 100vh;
+				margin: 0;
 			}
 
 			h1 {
 				color: #3498db;
-				font-size: 2.5rem;
-				margin-bottom: 10px;
 			}
 
-			p {
+			input[type="number"] {
+				padding: 10px;
 				font-size: 1.2rem;
-				color: #555;
+				margin: 10px;
+				border: 2px solid #ccc;
+				border-radius: 5px;
+				width: 200px;
 			}
 
 			button {
@@ -38,16 +40,20 @@
 				border: none;
 				border-radius: 5px;
 				cursor: pointer;
-				transition: background-color 0.3s ease, transform 0.3s ease;
-				margin-top: 20px;
+				margin-top: 10px;
 			}
 
 			button:hover {
 				background-color: #2980b9;
-				transform: scale(1.05);
 			}
 
-			#result {
+			#result_005 {
+				margin-top: 20px;
+				font-size: 1.5rem;
+			}
+
+			/* Styling the pattern result box */
+			#pattern_result_005 {
 				margin-top: 20px;
 				font-size: 1.1rem;
 				max-height: 400px;
@@ -59,7 +65,7 @@
 				box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 			}
 
-			.number {
+			.number_005 {
 				font-weight: bold;
 				margin-right: 5px;
 			}
@@ -67,23 +73,24 @@
 	</head>
 
 	<body>
-		<h1>Number Pattern</h1>
-		<p></p>
-		<!-- <button onclick="generatePattern()">Generate Pattern</button> -->
-		<div id="result"></div>
+
+		<h1>Number Pattern_005</h1>
+		<p>Generated pattern of numbers:</p>
+		<div id="pattern_result_005"></div>
 
 		<script>
-			let resultElement = document.getElementById("result");
-			resultElement.innerHTML = "";
-			let rows = 5;
-			for (let i = 1; i <= rows; i++) {
-				let row = "";
-				for (let j = 1; j <= i; j++) {
-					row += `<span class="number">${j}</span>`;
-				}
-				resultElement.innerHTML += row + "<br>";
-			}
 
+			// Generate number pattern
+			let patternResultElement_005 = document.getElementById("pattern_result_005");
+			patternResultElement_005.innerHTML = "";
+			let rows_005 = 5;
+			for (let i_005 = 1; i_005 <= rows_005; i_005++) {
+				let row_005 = "";
+				for (let j_005 = 1; j_005 <= i_005; j_005++) {
+					row_005 += `<span class="number_005">${j_005}</span>`;
+				}
+				patternResultElement_005.innerHTML += row_005 + "<br>";
+			}
 		</script>
 	</body>
 

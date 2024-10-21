@@ -4,29 +4,23 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Prime Checker</title>
+		<title>Prime_Checker_005</title>
 		<style>
+			/* Basic styling for the page */
 			body {
-				font-family: 'Arial', sans-serif;
+				font-family: Arial, sans-serif;
 				background-color: #f4f4f9;
 				color: #333;
-				margin: 0;
-				padding: 0;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
 				height: 100vh;
+				margin: 0;
 			}
 
 			h1 {
 				color: #4caf50;
-				font-size: 2.5rem;
-			}
-
-			p {
-				font-size: 1.2rem;
-				color: #555;
 			}
 
 			input[type="number"] {
@@ -59,7 +53,7 @@
 				background-color: #45a049;
 			}
 
-			#result {
+			#prime_result_005 {
 				margin-top: 20px;
 				font-size: 1.5rem;
 				color: #333;
@@ -68,39 +62,46 @@
 	</head>
 
 	<body>
-		<h1>Prime Number Checker</h1>
+		<h1>Prime Number Checker_005</h1>
 		<p>This is a simple Prime Number Checking Game</p>
-		<input type="number" id="number" placeholder="Enter a number">
-		<button onclick="check_prime()">Check Prime</button>
-		<p id="result"></p>
+		<input type="number" id="prime_number_005" placeholder="Enter a number">
+		<button onclick="checkPrime_005()">Check Prime</button>
+		<p id="prime_result_005"></p>
 
 		<script>
-			function check_prime() {
-				let num = parseInt(document.getElementById("number").value);
-				let isPrime = true;
-				if (isNaN(num)) {
-					document.getElementById("result").innerHTML = "Please enter a valid number";
-					return;
-				}
-				if (num === 1) {
-					document.getElementById("result").innerHTML = "1 is neither prime nor composite";
+			// Prime number checker
+			function checkPrime_005() {
+				let num_005 = parseInt(document.getElementById("prime_number_005").value);
+				let isPrime_005 = true;
+				const resultElement_005 = document.getElementById("prime_result_005");
+
+				if (isNaN(num_005)) {
+					resultElement_005.innerHTML = "Please enter a valid number";
 					return;
 				}
 
-				if (num <= 1) {
-					isPrime = false;
-					document.getElementById("result").innerHTML = num + " is not a prime number";
+				if (num_005 === 1) {
+					resultElement_005.innerHTML = "1 is neither prime nor composite";
+					return;
 				}
-				for (let i = 2; i <= Math.sqrt(num); i++) {
-					if (num % i == 0) {
-						isPrime = false;
+
+				if (num_005 <= 1) {
+					isPrime_005 = false;
+					resultElement_005.innerHTML = num_005 + " is not a prime number";
+					return;
+				}
+
+				for (let i_005 = 2; i_005 <= Math.sqrt(num_005); i_005++) {
+					if (num_005 % i_005 == 0) {
+						isPrime_005 = false;
 						break;
 					}
 				}
-				if (isPrime) {
-					document.getElementById("result").innerHTML = num + " is a prime number";
+
+				if (isPrime_005) {
+					resultElement_005.innerHTML = num_005 + " is a prime number";
 				} else {
-					document.getElementById("result").innerHTML = num + " is not a prime number";
+					resultElement_005.innerHTML = num_005 + " is not a prime number";
 				}
 			}
 		</script>

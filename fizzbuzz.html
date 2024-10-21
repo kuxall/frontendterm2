@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>FizzBuzz</title>
 		<style>
+			/* Basic styling for the page */
 			body {
 				font-family: 'Arial', sans-serif;
 				background-color: #f4f4f9;
@@ -30,6 +31,7 @@
 				color: #555;
 			}
 
+			/* Button styling */
 			button {
 				padding: 10px 20px;
 				font-size: 1.2rem;
@@ -47,7 +49,8 @@
 				transform: scale(1.05);
 			}
 
-			#result {
+			/* Styling the result box */
+			#result_005 {
 				margin-top: 20px;
 				font-size: 1.1rem;
 				max-height: 400px;
@@ -60,17 +63,17 @@
 			}
 
 			/* Fizz and Buzz colors */
-			.fizz {
+			.fizz_005 {
 				color: #e74c3c;
 				font-weight: bold;
 			}
 
-			.buzz {
+			.buzz_005 {
 				color: #f39c12;
 				font-weight: bold;
 			}
 
-			.fizzbuzz {
+			.fizzbuzz_005 {
 				color: #2ecc71;
 				font-weight: bold;
 			}
@@ -80,23 +83,30 @@
 	<body>
 		<h1>FizzBuzz</h1>
 		<p>This is a simple FizzBuzz game.</p>
-		<button onclick="fizzBuzz()">Start Game</button>
-		<div id="result"></div>
+		<button onclick="fizzBuzz_005()">Start Game</button>
+		<div id="result_005"></div>
 
 		<script>
-			function fizzBuzz() {
-				let resultElement = document.getElementById("result");
-				resultElement.innerHTML = "";
+			// Function to handle the FizzBuzz logic
+			function fizzBuzz_005() {
+				// Get the result element by its unique ID
+				let resultElement_005 = document.getElementById("result_005");
+				resultElement_005.innerHTML = ""; // Clear previous results
 
-				for (let i = 1; i <= 100; i++) {
-					if (i % 3 == 0 && i % 5 == 0) {
-						resultElement.innerHTML += `<span class="fizzbuzz">FizzBuzz</span><br>`;
-					} else if (i % 3 == 0) {
-						resultElement.innerHTML += `<span class="fizz">Fizz</span><br>`;
-					} else if (i % 5 == 0) {
-						resultElement.innerHTML += `<span class="buzz">Buzz</span><br>`;
+				// Loop through numbers 1 to 100
+				for (let i_005 = 1; i_005 <= 100; i_005++) {
+					if (i_005 % 3 === 0 && i_005 % 5 === 0) {
+						// If divisible by both 3 and 5, display "FizzBuzz"
+						resultElement_005.innerHTML += `<span class="fizzbuzz_005">FizzBuzz</span><br>`;
+					} else if (i_005 % 3 === 0) {
+						// If divisible by 3, display "Fizz"
+						resultElement_005.innerHTML += `<span class="fizz_005">Fizz</span><br>`;
+					} else if (i_005 % 5 === 0) {
+						// If divisible by 5, display "Buzz"
+						resultElement_005.innerHTML += `<span class="buzz_005">Buzz</span><br>`;
 					} else {
-						resultElement.innerHTML += `${i}<br>`;
+						// Otherwise, display the number
+						resultElement_005.innerHTML += `${i_005}<br>`;
 					}
 				}
 			}

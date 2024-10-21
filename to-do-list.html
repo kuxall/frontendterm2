@@ -4,8 +4,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>To-Do List</title>
+		<title>To-Do_List_005</title>
 		<style>
+			/* Basic styling for the page */
 			body {
 				font-family: Arial, sans-serif;
 				background-color: #f4f4f9;
@@ -77,61 +78,59 @@
 	</head>
 
 	<body>
-
-		<h1>To-Do List</h1>
-		<input type="text" id="taskInput" placeholder="Enter a new task">
-		<button onclick="addTask()">Add Task</button>
-		<ul id="taskList"></ul>
+		<h1>To-Do List_005</h1>
+		<input type="text" id="taskInput_005" placeholder="Enter a new task">
+		<button onclick="addTask_005()">Add Task</button>
+		<ul id="taskList_005"></ul>
 
 		<script>
 			// Function to add a new task
-			function addTask() {
-				const taskInput = document.getElementById("taskInput");
-				const taskValue = taskInput.value;
+			function addTask_005() {
+				const taskInput_005 = document.getElementById("taskInput_005");
+				const taskValue_005 = taskInput_005.value;
 
-				if (taskValue === "") {
+				if (taskValue_005 === "") {
 					alert("Please enter a task!");
 					return;
 				}
 
 				// Create a new list item
-				const listItem = document.createElement("li");
-				listItem.textContent = taskValue;
+				const listItem_005 = document.createElement("li");
+				listItem_005.textContent = taskValue_005;
 
 				// Add the remove button
-				const removeButton = createRemoveButton();
-				listItem.appendChild(removeButton);
+				const removeButton_005 = createRemoveButton_005();
+				listItem_005.appendChild(removeButton_005);
 
 				// Add the list item to the task list
-				const taskList = document.getElementById("taskList");
-				taskList.appendChild(listItem);
+				const taskList_005 = document.getElementById("taskList_005");
+				taskList_005.appendChild(listItem_005);
 
 				// Clear the input field
-				taskInput.value = "";
+				taskInput_005.value = "";
 			}
 
 			// Function to create a remove button for a task
-			function createRemoveButton() {
-				const removeButton = document.createElement("button");
-				removeButton.textContent = "Remove";
-				removeButton.className = "remove-btn";
+			function createRemoveButton_005() {
+				const removeButton_005 = document.createElement("button");
+				removeButton_005.textContent = "Remove";
+				removeButton_005.className = "remove-btn";
 
 				// Attach the removeTask function when the button is clicked
-				removeButton.onclick = function () {
-					removeTask(removeButton);
+				removeButton_005.onclick = function () {
+					removeTask_005(removeButton_005);
 				};
 
-				return removeButton;
+				return removeButton_005;
 			}
 
 			// Function to remove a task
-			function removeTask(button) {
-				const taskList = document.getElementById("taskList");
-				const listItem = button.parentElement;
-				taskList.removeChild(listItem);
+			function removeTask_005(button_005) {
+				const taskList_005 = document.getElementById("taskList_005");
+				const listItem_005 = button_005.parentElement;
+				taskList_005.removeChild(listItem_005);
 			}
 		</script>
-
 	</body>
 
 </html>

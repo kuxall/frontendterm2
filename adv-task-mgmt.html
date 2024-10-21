@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Task Management Dashboard</title>
+		<title>Task_Management_Dashboard_005</title>
 		<style>
 			body {
 				font-family: Arial, sans-serif;
@@ -18,7 +18,7 @@
 				margin: 0;
 			}
 
-			.dashboard {
+			.dashboard_005 {
 				background-color: white;
 				padding: 20px;
 				border-radius: 10px;
@@ -127,87 +127,86 @@
 	</head>
 
 	<body>
-		<div class="dashboard">
-			<h1> Task Management Dashboard</h1>
-			<label for="tasktitle"> Task Title: </label>
-			<input type="text" id="tasktitle" placeholder="Enter Task Title">
-			<label for="taskdesc"> Task Description: </label>
-			<input type="text" id="taskdesc" placeholder="Enter Task Description">
-			<button onclick="addTask()"> Add Task</button>
+		<div class="dashboard_005">
+			<h1> Task Management Dashboard_005</h1>
+			<label for="tasktitle_005"> Task Title: </label>
+			<input type="text" id="tasktitle_005" placeholder="Enter Task Title">
+			<label for="taskdesc_005"> Task Description: </label>
+			<input type="text" id="taskdesc_005" placeholder="Enter Task Description">
+			<button id="addTaskBtn_005"> Add Task</button>
 			<h3> Task List</h3>
-			<ul id="tasklist"></ul>
+			<ul id="tasklist_005"></ul>
 		</div>
 		<script>
-			document.getElementById("addTaskBtn").addEventListener("click", addTask);
+			document.getElementById("addTaskBtn_005").addEventListener("click", addTask_005);
 
-			function addTask() {
-				const taskTitle = document.getElementById("tasktitle").value.trim();
-				const taskDescription = document.getElementById("taskdesc").value.trim();
+			function addTask_005() {
+				const taskTitle_005 = document.getElementById("tasktitle_005").value.trim();
+				const taskDescription_005 = document.getElementById("taskdesc_005").value.trim();
 
 				// Check for empty fields
-				if (taskTitle === "" || taskDescription === "") {
+				if (taskTitle_005 === "" || taskDescription_005 === "") {
 					alert("Please enter a task title and description.");
 					return;
 				}
 
-				const taskList = document.getElementById("tasklist");
+				const taskList_005 = document.getElementById("tasklist_005");
 
 				// Create the list item
-				const listItem = document.createElement("li");
+				const listItem_005 = document.createElement("li");
 
-				const taskDetails = document.createElement("div");
-				taskDetails.className = "task-details";
-				taskDetails.innerHTML = `<strong>${taskTitle}</strong><br>${taskDescription}`;
+				const taskDetails_005 = document.createElement("div");
+				taskDetails_005.className = "task-details";
+				taskDetails_005.innerHTML = `<strong>${taskTitle_005}</strong><br>${taskDescription_005}`;
 
-				const taskButtons = document.createElement("div");
-				taskButtons.className = "task-buttons";
+				const taskButtons_005 = document.createElement("div");
+				taskButtons_005.className = "task-buttons";
 
 				// Create buttons with event listeners for Edit, Delete, and Complete
-				const editButton = document.createElement("button");
-				editButton.innerText = "Edit";
-				editButton.className = "edit-btn";
-				editButton.addEventListener("click", () => editTask(listItem, taskDetails));
+				const editButton_005 = document.createElement("button");
+				editButton_005.innerText = "Edit";
+				editButton_005.className = "edit-btn";
+				editButton_005.addEventListener("click", () => editTask_005(listItem_005, taskDetails_005));
 
-				const deleteButton = document.createElement("button");
-				deleteButton.innerText = "Delete";
-				deleteButton.className = "delete-btn";
-				deleteButton.addEventListener("click", () => deleteTask(listItem));
+				const deleteButton_005 = document.createElement("button");
+				deleteButton_005.innerText = "Delete";
+				deleteButton_005.className = "delete-btn";
+				deleteButton_005.addEventListener("click", () => deleteTask_005(listItem_005));
 
-				const completeButton = document.createElement("button");
-				completeButton.innerText = "Complete";
-				completeButton.className = "complete-btn";
-				completeButton.addEventListener("click", () => completeTask(taskDetails));
+				const completeButton_005 = document.createElement("button");
+				completeButton_005.innerText = "Complete";
+				completeButton_005.className = "complete-btn";
+				completeButton_005.addEventListener("click", () => completeTask_005(taskDetails_005));
 
-
-				taskButtons.appendChild(editButton);
-				taskButtons.appendChild(deleteButton);
-				taskButtons.appendChild(completeButton);
-				listItem.appendChild(taskDetails);
-				listItem.appendChild(taskButtons);
+				taskButtons_005.appendChild(editButton_005);
+				taskButtons_005.appendChild(deleteButton_005);
+				taskButtons_005.appendChild(completeButton_005);
+				listItem_005.appendChild(taskDetails_005);
+				listItem_005.appendChild(taskButtons_005);
 
 				// Add the list item to the task list
-				taskList.appendChild(listItem);
+				taskList_005.appendChild(listItem_005);
 
 				// Clear the input fields after adding the task
-				document.getElementById("tasktitle").value = "";
-				document.getElementById("taskdesc").value = "";
+				document.getElementById("tasktitle_005").value = "";
+				document.getElementById("taskdesc_005").value = "";
 			}
 
-			function deleteTask(listItem) {
-				listItem.remove();
+			function deleteTask_005(listItem_005) {
+				listItem_005.remove();
 			}
 
-			function editTask(listItem, taskDetails) {
-				const newTaskTitle = prompt("Edit Task Title:", taskDetails.querySelector("strong").textContent);
-				const newTaskDescription = prompt("Edit Task Description:", taskDetails.textContent.split("\n")[1]);
+			function editTask_005(listItem_005, taskDetails_005) {
+				const newTaskTitle_005 = prompt("Edit Task Title:", taskDetails_005.querySelector("strong").textContent);
+				const newTaskDescription_005 = prompt("Edit Task Description:", taskDetails_005.textContent.split("\n")[1]);
 
-				if (newTaskTitle !== null && newTaskDescription !== null) {
-					taskDetails.innerHTML = `<strong>${newTaskTitle}</strong><br>${newTaskDescription}`;
+				if (newTaskTitle_005 !== null && newTaskDescription_005 !== null) {
+					taskDetails_005.innerHTML = `<strong>${newTaskTitle_005}</strong><br>${newTaskDescription_005}`;
 				}
 			}
 
-			function completeTask(taskDetails) {
-				taskDetails.classList.toggle("completed");
+			function completeTask_005(taskDetails_005) {
+				taskDetails_005.classList.toggle("completed");
 			}
 		</script>
 	</body>

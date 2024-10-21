@@ -4,8 +4,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Number Guessing Game</title>
+		<title>Number_Guessing_Game_005</title>
 		<style>
+			/* Basic styling for the page */
 			body {
 				font-family: Arial, sans-serif;
 				background-color: #f4f4f9;
@@ -46,7 +47,7 @@
 				background-color: #2980b9;
 			}
 
-			#result {
+			#result_005 {
 				margin-top: 20px;
 				font-size: 1.5rem;
 			}
@@ -54,42 +55,44 @@
 	</head>
 
 	<body>
-
-		<h1>Number Guessing Game</h1>
+		<h1>Number Guessing Game_005</h1>
 		<p>Guess the number between 1 and 50!</p>
-		<input type="number" id="guess" placeholder="Enter your guess" min="1" max="50">
-		<button onclick="guessNumber()">Guess</button>
-		<div id="result"></div>
+		<input type="number" id="guess_005" placeholder="Enter your guess" min="1" max="50">
+		<button onclick="guessNumber_005()">Guess</button>
+		<div id="result_005"></div>
 
 		<script>
 			// Generate a random number between 1 and 50
-			const randomNumber = Math.floor(Math.random() * 50) + 1;
-			let attempts = 5;
+			const randomNumber_005 = Math.floor(Math.random() * 50) + 1;
+			let attempts_005 = 5;
 
-			function guessNumber() {
-				const guess = parseInt(document.getElementById("guess").value);
-				const resultElement = document.getElementById("result");
+			function guessNumber_005() {
+				const guess_005 = parseInt(document.getElementById("guess_005").value);
+				const resultElement_005 = document.getElementById("result_005");
 
-				if (guess < 1 || guess > 50) {
-					resultElement.innerHTML = `Please enter a number between 1 and 50.`;
+				// Check if the guessed number is within the valid range
+				if (guess_005 < 1 || guess_005 > 50) {
+					resultElement_005.innerHTML = `Please enter a number between 1 and 50.`;
 					return;
 				}
 
-				if (guess === randomNumber) {
-					resultElement.innerHTML = `Congratulations! You guessed the number ${randomNumber}!`;
+				// Check if the guessed number matches the random number
+				if (guess_005 === randomNumber_005) {
+					resultElement_005.innerHTML = `Congratulations! You guessed the number ${randomNumber_005}!`;
 					return;
 				}
 
-				attempts--;
+				// Decrease the number of attempts left
+				attempts_005--;
 
-				if (attempts > 0) {
-					resultElement.innerHTML = `Too ${guess < randomNumber ? 'low' : 'high'}! Attempts left: ${attempts}`;
+				// Provide feedback to the user
+				if (attempts_005 > 0) {
+					resultElement_005.innerHTML = `Too ${guess_005 < randomNumber_005 ? 'low' : 'high'}! Attempts left: ${attempts_005}`;
 				} else {
-					resultElement.innerHTML = `Sorry! You ran out of attempts. The number was ${randomNumber}. Game Over!`;
+					resultElement_005.innerHTML = `Sorry! You ran out of attempts. The number was ${randomNumber_005}. Game Over!`;
 				}
 			}
 		</script>
-
 	</body>
 
 </html>
